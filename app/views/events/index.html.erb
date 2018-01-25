@@ -1,0 +1,30 @@
+<h1>Alle Arrangementer</h1>
+<% content_for :aside do %>
+   <%= render partial: "sidebar" %>
+ <% end %>
+<% if @events.size > 0 %>
+<table>
+ 	 <% @events.each do |event| %>
+	   <tr>
+	      <td><%= image_tag(event.image_url,  :class => 'list_image') %></td>
+	      <td>
+		       <dl>
+		         <dt><%= link_to event.name, event %></dt>
+		         <dt><%= truncate(strip_tags(event.description), :rows => 6) %></dt>
+				 </br>
+				 <dt>Dato: <%= event.start_date.strftime('%d-%m-%Y') %></dt>
+				 <dt>Tid: <%= event.start_time.strftime('%H:%M')%></dt>
+				 </br></br>
+				 <dt><%= link_to "Tilmeld dig her", new_participant_path %>  &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp;
+				      <%= link_to " Hvem deltager ?", event %>
+			     </dt>
+		       </dl>
+		  </td>
+	   </tr>
+	 <% end %>
+   
+ </table>
+  <% else %>
+ <p><em> Ingen Arrangementer </em ></p>
+ <p><%= link_to "Opret Arrangement", new_event_path %></p>
+ <% end %>
