@@ -4,12 +4,13 @@ git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
   "https://github.com/#{repo_name}.git"
 end
-
-
+# use postgresql as the database for Active Record
+gem 'pg', '~> 0.21.0'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
+gem 'taps'
 gem 'rails', '~> 5.1.4'
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
 # Use SCSS for stylesheets

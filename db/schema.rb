@@ -12,6 +12,9 @@
 
 ActiveRecord::Schema.define(version: 20180125110900) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "events", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -23,10 +26,10 @@ ActiveRecord::Schema.define(version: 20180125110900) do
   end
 
   create_table "overviews", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
     t.integer "event_id"
     t.integer "participant_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "participants", force: :cascade do |t|
