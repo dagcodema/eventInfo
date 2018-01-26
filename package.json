@@ -1,10 +1,10 @@
 {
   "name": "eventInfo",
   "private": true,
-  "dependencies": {}
-}
-
-"engines": {
+  "dependencies": {},
+  "engines": {
 	"node": ">=6.0.0",
     "yarn": ">=0.25.2"
   }
+}
+ 

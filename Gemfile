@@ -13,6 +13,12 @@ gem 'rails', '~> 5.1.4'
 
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
+#use capistrano as deployment tool
+gem 'capistrano'
+gem 'capistrano3-puma'
+gem 'capistrano-rails', require: false
+gem 'capistrano-bundler', require: false
+gem 'capistrano-rvm'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
