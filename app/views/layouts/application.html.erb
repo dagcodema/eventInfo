@@ -24,20 +24,20 @@
 	     </nav>
        </header>
        <section id="main">	
-          <article> 	  
-		    <div class="flash notice">
-			<%= flash[:notice]%></div>
+          <content> 	  
+		         <div class="flash notice">
+			       <%= flash[:notice]%></div>
 			
             <%= yield %>
-			</article>
-		  <aside>
+			   </content>
+		     <aside>
              <%= yield :aside%>
-          </aside>
-        </section>
-        <footer>
+        </aside>
+      </section>
+      <footer>
            <p id="copyright"> <em> Copyright</em>&nbsp; &nbsp; &nbsp;<em><%= Date.today.year %></em></p>
 		   
-        </footer>
+      </footer>
  </div>
 </body>
 </html>

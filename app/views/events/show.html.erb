@@ -1,5 +1,5 @@
 <h1><%= @event.name %></h1>
-<div id="course_description"><%= @event.description %></div>
+<div id="event_description"><%= @event.description %></div>
 <% if @event.participants.size > 0 %>
     <h2>Alle deltagere: &nbsp; &nbsp; &nbsp;</h2>
        <%= render partial: "participants/participant" %>

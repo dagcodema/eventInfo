@@ -1,6 +1,15 @@
 <h1>Opret Arrangement<h1>
-
-<article class="form">
+<% if @event.errors.any? %>
+    <div id="errors">
+        <p>Please correct the following <%= pluralize(@event.errors.count, "error") %>: </p>
+     <ul>
+    <% @event.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+     <% end %>
+    </ul>
+</div>
+<% end %>
+<content class="form">
   <%= render 'form'%>
-</article>
+</content>
 

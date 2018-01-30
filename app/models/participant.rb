@@ -6,4 +6,15 @@ class Participant < ApplicationRecord
 	validates :last_name, length: {minimum: 3}, presence: true
 	validates_format_of :email, :with => /\A[^@,\s]+@[^@,\s]+\.[^@,\s]+\z/ , presence: true
 	
+
+
+   def new?
+     id.nil?
+   end
+
+   def email_taken?
+    self.class.exists?(:email => email)
+   end
+
+
 end

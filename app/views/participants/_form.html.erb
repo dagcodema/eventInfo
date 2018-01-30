@@ -1,6 +1,7 @@
-<%= form_for @participant, method: :post do |f| %>
+<%= form_for @participant do  |f| %>
    <div> <%= f.label :arrangement %></br>
-         <%= f.collection_select :id, Event.order(:name), :id, :name, {:include_blank => 'Aktuelle Arrangementer'}%>
+         <%= f.collection_select :event_ids, Event.order(:name), :id, :name, {:include_blank => 'Aktuelle Arrangementer'}%>
+
    </div>
    <div>
         <%= f.label :fornavn %><br/>
@@ -20,6 +21,6 @@
    </div>
    </br>
    <div class="actions">
-         <%= f.submit @participant.new_record? ? "Tilmeld" : "Create Overview" %>
+         <%= f.submit "Tilmeld" %>
    </div>
 <% end %>

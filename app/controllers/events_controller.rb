@@ -5,7 +5,7 @@ class EventsController < ApplicationController
    end
 
    def new
-      @events = Event.new
+      @event = Event.new
    end
    
    def create

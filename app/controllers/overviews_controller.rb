@@ -7,13 +7,13 @@ class OverviewsController < ApplicationController
    def new
      @event = Event.all
      @participant = Participant.all
-     @overview = Overview.new(params[:event_id], [:participant_id])
+     @overview = Overview.new(params[:overview].permit(:event_id], [:participant_id]))
    end
    
    def create
-     event = Event.find_by_name(params[:name])
+     event = Event.find_by_name(@event)
      @overview = Overview.create(event: @event, participant: @participant)
-     flash[:success] = " Deltager #{@overview} was added"
+     flash[:success] = "#{@overview} Er tilmeldt"
      redirect_to root_path
    end 
 

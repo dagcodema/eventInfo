@@ -1,5 +1,5 @@
 <%= form_for @event do |f| %>
-   <div>
+   <div class="field">
        <%= f.label :navn %><br/>
        <%= f.text_field :name %>
    </div>
@@ -21,6 +21,6 @@
    </div>
    </br>
    <div class="actions">
-      <%= f.submit @event.new_record? ? "Opret Arrangement" : "Update Event" %>
+      <%= f.submit  "Opret arrangement" %>
    </div>
 <% end %>
